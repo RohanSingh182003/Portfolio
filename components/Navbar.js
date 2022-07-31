@@ -53,12 +53,12 @@ const Navbar = () => {
                         variants={navItem}
                         whileTap="tap"
                         whileHover="hover"
-                        className='cursor-pointer hover:underline-offset-4 hover:underline hover:text-blue-600'><a href="#portfolio"> Portfolio</a></motion.li>
+                        className='cursor-pointer hover:underline-offset-4 hover:underline hover:text-blue-600'><a href="#projects"> Projects</a></motion.li>
                         <motion.li
                         variants={navItem}
                         whileTap="tap"
                         whileHover="hover"
-                        className='cursor-pointer hover:underline-offset-4 hover:underline hover:text-blue-600'><a href="#projects"> Projects</a></motion.li>
+                        className='cursor-pointer hover:underline-offset-4 hover:underline hover:text-blue-600'><a href="#portfolio"> Portfolio</a></motion.li>
                         <motion.li
                         variants={navItem}
                         whileTap="tap"
@@ -84,8 +84,8 @@ const Navbar = () => {
                     <ul className='space-y-2 mt-6'>
                         <li><a href="#home"> Home</a></li>
                         <li><a href="#about"> About</a></li>
-                        <li><a href="#portfolio"> Portfolio</a></li>
                         <li><a href="#projects"> Projects</a></li>
+                        <li><a href="#portfolio"> Portfolio</a></li>
                         <li><a href="#contact"> Contact</a></li>
                     </ul>
                 </motion.div>}

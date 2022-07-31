@@ -3,6 +3,7 @@ import Typewriter from 'typewriter-effect';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import { useState } from 'react';
+import { AiFillGithub } from 'react-icons/ai';
 
 export default function Home() {
   const [education, setEducation] = useState( true )
@@ -155,7 +156,7 @@ export default function Home() {
               className='list-disc space-y-4 mt-6'>
               <motion.div
                 variants={innerAboutVariants}
-                className='flex'>
+                className='flex items-center'>
                 <li className='text-blue-600'><strong>10 </strong><sup> th</sup> :</li><span className='ml-2 text-xs md:text-sm text-slate-900'>From WBBSE(2019) with 65%.</span></motion.div>
               <motion.div
                 variants={innerAboutVariants}
@@ -191,6 +192,59 @@ export default function Home() {
           </motion.div>}
         </div>
       </motion.section>
+      {/* ------------------------projects----------------------- */}
+      <section id='projects' className='bg-white md:px-12 lg:px-24 py-6 md:py-10 opacity-[2]'>
+        <h1 className='text-lg md:text-xl lg:text-3xl text-center md:text-start font-semibold text-blue-600'>My Recent Projects</h1>
+        <div className="flex flex-wrap md:my-6 justify-evenly cursor-pointer space-y-4 md:space-y-2 lg:space-y-0">
+          <a href="#">
+          <motion.div 
+            whileHover={{
+              scale: 1.05,
+              transition: {
+                duration: 0.3
+              }
+            }}
+            whileTap={{
+              scale: 0.9
+            }}
+            className='w-64 h-64 bg-orange-300 rounded-lg relative mt-4 md:mt-2 lg:mt-0'>
+            <img 
+            className='absolute rounded-lg inset-0 w-full h-full object-cover object-center' src="https://s3.amazonaws.com/gdb-blog/images/graphenedb-security.png"/>
+            <motion.div
+            initial={{
+              opacity: 0,
+            }}
+            whileHover={{
+              opacity: 1,
+              transition:{
+                duration: 0.5
+              }
+            }}
+            className='relative rounded-lg z-10 w-full min-h-full p-4 bg-[#ffffffdc]'>
+              <div className='flex flex-col justify-center items-center'>
+            <h2 class="tracking-widest text-sm title-font font-medium text-green-600 mb-1">Django</h2>
+            <h1 class="title-font text-xl font-semibold text-blue-700 mb-3">Authentication System</h1>
+            <p className='text-xs text-green-600 -mt-3 mb-4 ml-auto'>~ Completed</p>
+            <p class="leading-relaxed text-slate-800">This Authentication System fully make in Django which is a python Framework.</p>
+            </div>
+            <div className='absolute bottom-2 right-3 flex'>
+            <p className='text-xs md:text-sm mx-2 text-slate-600'>Show it on </p><AiFillGithub className='text-xl'/></div>
+            </motion.div>
+            <div className='absolute bottom-1 right-2 flex md:hidden'>
+            <p className='text-xs md:text-sm mx-2 text-black'>Show it on </p><AiFillGithub className='text-xl'/></div>
+          </motion.div>
+          </a>
+          <div className='w-64 h-64 bg-orange-300 rounded-lg'>
+
+          </div>
+          <div className='w-64 h-64 bg-orange-300 rounded-lg'>
+
+          </div>
+          <div className='w-64 h-64 bg-orange-300 rounded-lg'>
+
+          </div>
+        </div>
+      </section>
     </>
   )
 }
