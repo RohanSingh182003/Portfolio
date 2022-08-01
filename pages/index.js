@@ -3,7 +3,9 @@ import Typewriter from 'typewriter-effect';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import { useState } from 'react';
-import { AiFillGithub } from 'react-icons/ai';
+import { AiFillGithub , AiOutlineInstagram , AiFillLinkedin , AiOutlineMail , AiFillTwitterCircle } from 'react-icons/ai';
+import { FiPhoneCall } from 'react-icons/fi';
+
 
 export default function Home() {
   const [education, setEducation] = useState( true )
@@ -208,10 +210,10 @@ export default function Home() {
             whileTap={{
               scale: 0.9
             }}
-            className='w-64 md:w-80 lg:w-64 h-64 bg-orange-300 rounded-lg relative mt-4 md:mt-2 lg:mt-0 hover:shadow-2xl hover:border-2'>
+            className='w-64 md:w-80 lg:w-64 h-64 rounded-lg relative mt-4 md:mt-2 lg:mt-0 hover:shadow-2xl hover:border-2'>
             <a href="#">
               <img
-                className='absolute rounded-lg inset-0 w-full h-full object-cover object-center' src="https://s3.amazonaws.com/gdb-blog/images/graphenedb-security.png" />
+                className='absolute rounded-lg inset-0 w-full h-full object-cover object-center hover:opacity-50' src="https://s3.amazonaws.com/gdb-blog/images/graphenedb-security.png" />
               <motion.div
                 initial={{
                   opacity: 0,
@@ -222,7 +224,7 @@ export default function Home() {
                     duration: 0.5
                   }
                 }}
-                className='relative rounded-lg z-10 w-full min-h-full p-4 bg-[#ffffffdc]'>
+                className='relative rounded-lg z-10 w-full min-h-full p-4 bg-gradient-to-t from-blue-500 to-[#ffffffdc]'>
                 <div className='flex flex-col justify-center items-center'>
                   <h2 class="tracking-widest text-sm title-font font-medium text-green-600 mb-1">Django</h2>
                   <h1 class="title-font text-xl font-semibold text-blue-700 mb-3">Authentication System</h1>
@@ -230,7 +232,7 @@ export default function Home() {
                   <p class="leading-relaxed text-slate-800">This Authentication System fully make in Django which is a python Framework.</p>
                 </div>
                 <div className='absolute bottom-2 right-3 flex'>
-                  <p className='text-xs md:text-sm mx-2 text-slate-600'>Click it to show the code on </p><AiFillGithub className='text-xl' /></div>
+                  <p className='text-xs md:text-sm mx-2 text-white'>Click it to show the code on </p><AiFillGithub className='text-xl' /></div>
               </motion.div>
               <div className='absolute bottom-1 right-2 flex lg:hidden'>
                 <p className='text-xs md:text-sm mx-2 text-black'>Click it to show the code on </p><AiFillGithub className='text-xl' /></div>
@@ -260,7 +262,7 @@ export default function Home() {
                     duration: 0.5
                   }
                 }}
-                className='relative rounded-lg z-10 w-full min-h-full p-4 bg-[#ffffffdc]'>
+                className='relative rounded-lg z-10 w-full min-h-full p-4  bg-gradient-to-t from-blue-500 to-[#ffffffdc]'>
                 <div className='flex flex-col justify-center items-center'>
                   <h2 class="tracking-widest text-sm title-font font-medium text-green-600 mb-1">Django</h2>
                   <h1 class="title-font text-xl font-semibold text-blue-700 mb-3">Authentication System</h1>
@@ -268,7 +270,7 @@ export default function Home() {
                   <p class="leading-relaxed text-slate-800">This Authentication System fully make in Django which is a python Framework.</p>
                 </div>
                 <div className='absolute bottom-2 right-3 flex'>
-                  <p className='text-xs md:text-sm mx-2 text-slate-600'>Click it to show the code on </p><AiFillGithub className='text-xl' /></div>
+                  <p className='text-xs md:text-sm mx-2 text-white'>Click it to show the code on </p><AiFillGithub className='text-xl' /></div>
               </motion.div>
               <div className='absolute bottom-1 right-2 flex lg:hidden'>
                 <p className='text-xs md:text-sm mx-2 text-black'>Click it to show the code on </p><AiFillGithub className='text-xl' /></div>
@@ -298,7 +300,7 @@ export default function Home() {
                     duration: 0.5
                   }
                 }}
-                className='relative rounded-lg z-10 w-full min-h-full p-4 bg-[#ffffffdc]'>
+                className='relative rounded-lg z-10 w-full min-h-full p-4  bg-gradient-to-t from-blue-500 to-[#ffffffdc]'>
                 <div className='flex flex-col justify-center items-center'>
                   <h2 class="tracking-widest text-sm title-font font-medium text-green-600 mb-1">Django</h2>
                   <h1 class="title-font text-xl font-semibold text-blue-700 mb-3">Authentication System</h1>
@@ -306,7 +308,7 @@ export default function Home() {
                   <p class="leading-relaxed text-slate-800">This Authentication System fully make in Django which is a python Framework.</p>
                 </div>
                 <div className='absolute bottom-2 right-3 flex'>
-                  <p className='text-xs md:text-sm mx-2 text-slate-600'>Click it to show the code on </p><AiFillGithub className='text-xl' /></div>
+                  <p className='text-xs md:text-sm mx-2 text-white'>Click it to show the code on </p><AiFillGithub className='text-xl' /></div>
               </motion.div>
               <div className='absolute bottom-1 right-2 flex lg:hidden'>
                 <p className='text-xs md:text-sm mx-2 text-black'>Click it to show the code on </p><AiFillGithub className='text-xl' /></div>
@@ -320,6 +322,33 @@ export default function Home() {
             scale: 0.9
           }}
           className='absolute lg:right-40 bottom-2 py-2 px-4 text-blue-600 border border-blue-600 rounded-md hover:text-white hover:bg-blue-600'>View more</motion.button>
+        </div>
+      </section>
+      {/* ------------------------contact----------------------- */}
+      <section className='bg-white flex py-14 relative'>
+        <div className='w-full md:w-1/2 flex flex-col justify-center pl-44 space-y-5'>
+          <h2 className='text-4xl'>Contact me</h2>
+          <div className='flex items-center cursor-pointer'><FiPhoneCall className='text-green-600 text-xl'/><p className='ml-2'> +91-6290653563</p></div>
+          <div className='flex items-center cursor-pointer'><AiOutlineMail className='text-orange-600 text-xl'/><p className='ml-2'> rs7289579@gmail.com</p></div>
+          <div className='flex space-x-4'>
+          <AiOutlineInstagram className='text-3xl text-red-600 cursor-pointer'/>
+          <AiFillLinkedin className='text-3xl text-blue-600 cursor-pointer'/>
+          <AiFillTwitterCircle className='text-3xl text-cyan-400 cursor-pointer'/>
+          <AiFillGithub className='text-3xl cursor-pointer'/>
+          </div>
+        </div>
+        <div className='w-full md:w-1/2 flex flex-col space-y-4 px-12'>
+          <input className='p-2 border rounded-md' type="text" name="name" placeholder='Enter Your Name'/>
+          <input className='p-2 border rounded-md' type="email" name="email" placeholder='Enter Your Email Id'/>
+          <textarea className='p-2 border rounded-md' name="address" id="address" cols="30" rows="6" placeholder='Enter your Address'></textarea>
+          <motion.button
+          whileHover={{
+            scale: 1.05
+          }}
+          whileTap={{
+            scale: 0.9
+          }}
+          className='absolute bottom-2 py-2 px-4 text-blue-600 border border-blue-600 rounded-md hover:text-white hover:bg-blue-600'>Submit</motion.button>
         </div>
       </section>
     </>
