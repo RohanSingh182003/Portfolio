@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import Typewriter from 'typewriter-effect';
 import { motion } from 'framer-motion';
-import Navbar from '../components/Navbar';
 import { useState } from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import { AiFillGithub , AiOutlineInstagram , AiFillLinkedin , AiOutlineMail , AiFillTwitterCircle } from 'react-icons/ai';
 import { FiPhoneCall } from 'react-icons/fi';
 
@@ -104,14 +105,14 @@ export default function Home() {
             duration: 0.3
           }
         }}
-        id="about" className='bg-white flex justify-center md:justify-around flex-wrap py-6'>
-        <div className='w-64 h-64 bg-orange-400 rounded-lg'>
+        id="about" className='bg-white flex justify-center md:justify-around flex-wrap px-6'>
+        <div className='w-52 h-52 md:w-64 md:h-64 bg-orange-400 rounded-lg'>
 
         </div>
         <div className='lg:w-6/12 md:w-5/12'>
-          <h2 className='md:text-lg lg:text-xl text-blue-600 font-semibold'>About me</h2>
-          <p className='text-xs text-slate-700'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam repellat aperiam facilis rem. Suscipit delectus voluptates repudiandae atque, corrupti recusandae velit aperiam voluptas qui in harum adipisci vero reiciendis non.</p>
-          <ul className='flex md:space-x-4 lg:space-x-6 my-2 border-b-2 pb-1'>
+          <h2 className='md:text-lg lg:text-xl text-blue-600 font-semibold text-center md:text-start'>About me</h2>
+          <p className='text-xs text-slate-700 px-6 md:px-2 text-center md:text-start'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam repellat aperiam facilis rem. Suscipit delectus voluptates repudiandae atque, corrupti recusandae velit aperiam voluptas qui in harum adipisci vero reiciendis non.</p>
+          <ul className='flex space-x-2 md:space-x-4 lg:space-x-6 my-2 border-b-2 pb-1'>
             <motion.li
               whileHover={{
                 y: -3,
@@ -155,7 +156,7 @@ export default function Home() {
             animate="visible"
           >
             <ul
-              className='list-disc space-y-4 mt-6'>
+              className='list-disc space-y-4 pt-2 lg:mt-6'>
               <motion.div
                 variants={innerAboutVariants}
                 className='flex items-center'>
@@ -174,7 +175,7 @@ export default function Home() {
             variants={aboutVariants}
             initial="hidden"
             animate="visible">
-            <ul className='list-disc space-y-4 mt-6'>
+            <ul className='list-disc space-y-4 pt-2 lg:mt-6'>
               <motion.li
                 variants={innerAboutVariants} className='text-blue-600'><strong> Fresher till now.</strong></motion.li>
             </ul>
@@ -183,7 +184,7 @@ export default function Home() {
             variants={aboutVariants}
             initial="hidden"
             animate="visible">
-            <ul className='list-disc space-y-4 mt-6'>
+            <ul className='list-disc space-y-4 pt-2 lg:mt-6'>
               <motion.li
                 variants={innerAboutVariants}
                 className='text-blue-600'><strong>Web Development</strong></motion.li>
@@ -197,7 +198,7 @@ export default function Home() {
       {/* ------------------------projects----------------------- */}
       <section
         id='projects' className='bg-white md:px-12 lg:px-24 pb-16 pt-4 md:py-10 opacity-[2] relative'>
-        <h1 className='text-lg md:text-xl lg:text-3xl text-center lg:text-start font-semibold text-blue-600'>My Recent Projects</h1>
+        <h1 className='text-xl md:text-2xl lg:text-3xl text-center lg:text-start font-semibold text-blue-600'>My Recent Projects</h1>
         <p className='text-slate-700 text-center lg:text-start'>Here is the all of my Recent Project Section. If you want to see the code just Click on it.</p>
         <div className="flex flex-col lg:flex-row flex-wrap md:my-6 items-center lg:justify-evenly cursor-pointer space-y-6 md:space-y-4 lg:space-y-0 mt-6">
           <motion.div
@@ -325,8 +326,8 @@ export default function Home() {
         </div>
       </section>
       {/* ------------------------contact----------------------- */}
-      <section className='bg-white flex py-14 relative'>
-        <div className='w-full md:w-1/2 flex flex-col justify-center pl-44 space-y-5'>
+      <section className='bg-white flex py-14 relative flex-wrap'>
+        <div className='w-full md:w-1/2 flex flex-col justify-center items-center md:items-start md:pl-44 space-y-5'>
           <h2 className='text-4xl'>Contact me</h2>
           <div className='flex items-center cursor-pointer'><FiPhoneCall className='text-green-600 text-xl'/><p className='ml-2'> +91-6290653563</p></div>
           <div className='flex items-center cursor-pointer'><AiOutlineMail className='text-orange-600 text-xl'/><p className='ml-2'> rs7289579@gmail.com</p></div>
@@ -337,7 +338,7 @@ export default function Home() {
           <AiFillGithub className='text-3xl cursor-pointer'/>
           </div>
         </div>
-        <div className='w-full md:w-1/2 flex flex-col space-y-4 px-12'>
+        <div className='w-full md:w-1/2 flex flex-col space-y-4 px-12 mt-10 md:mt-0'>
           <input className='p-2 border rounded-md' type="text" name="name" placeholder='Enter Your Name'/>
           <input className='p-2 border rounded-md' type="email" name="email" placeholder='Enter Your Email Id'/>
           <textarea className='p-2 border rounded-md' name="address" id="address" cols="30" rows="6" placeholder='Enter your Address'></textarea>
@@ -351,6 +352,8 @@ export default function Home() {
           className='absolute bottom-2 py-2 px-4 text-blue-600 border border-blue-600 rounded-md hover:text-white hover:bg-blue-600'>Submit</motion.button>
         </div>
       </section>
+      {/* ------------------------footer----------------------- */}
+      <Footer/>
     </>
   )
 }
