@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { AiFillGithub, AiOutlineInstagram, AiFillLinkedin, AiOutlineMail, AiFillTwitterCircle } from 'react-icons/ai';
+import { AiFillGithub, AiOutlineInstagram, AiFillLinkedin, AiOutlineMail, AiFillTwitterCircle, AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
 import { FiPhoneCall } from 'react-icons/fi';
 
 
@@ -12,6 +12,11 @@ export default function Home() {
   const [education, setEducation] = useState( true )
   const [experience, setExperience] = useState( false )
   const [skills, setSkills] = useState( false )
+  const [css, setCss] = useState( false )
+  const [javascript, setJavascript] = useState( false )
+  const [python, setPython] = useState( false )
+  const [languages, setLanguages] = useState( true )
+  const [cirtificates, setCirtificates] = useState( false )
 
   const handleEducation = () => {
     setEducation( true )
@@ -27,6 +32,23 @@ export default function Home() {
     setEducation( false )
     setExperience( false )
     setSkills( true )
+  }
+  const handleCss = () => {
+    setCss( !css );
+  }
+  const handleJavascript = () => {
+    setJavascript( !javascript );
+  }
+  const handlePython = () => {
+    setPython( !python );
+  }
+  const handleLanguages = () => {
+    setLanguages( true );
+    setCirtificates( false );
+  }
+  const handleCirtificates = () => {
+    setLanguages( false );
+    setCirtificates( true );
   }
   const aboutVariants = {
     hidden: {
@@ -195,52 +217,279 @@ export default function Home() {
           </motion.div>}
         </div>
       </motion.section>
-      {/* ------------------------languages----------------------- */}
-      <section id='languages' className='flex flex-col space-y-4 md:space-y-6 bg-white md:px-16 lg:px-28 py-8 md:py-10'>
-        <h1 className='text-xl md:text-2xl lg:text-4xl text-blue-600 font-semibold'>Programming Languages</h1>
-        <p>Here are some Programming languages or skills known by me.</p>
-        <div className='flex px-2 space-x-2 md:space-x-4 items-center'>
-          <span className='w-20 text-center'>HTML</span>
-          <div className='h-4 md:h-5 border w-full rounded-xl md:w-[60vw] relative bg-blue-50'>
-            <div className='h-full bg-blue-500 w-[50vw] rounded-xl absolute'></div>
+      {/* ------------------------more about----------------------- */}
+      <section id='languages' className='flex flex-col space-y-4 md:space-y-6 bg-white px-4 md:px-16 lg:px-28 py-8 md:py-20'>
+        <div className='flex justify-evenly'>
+          <div>
+            <motion.h1
+              whileHover={{
+                y: -3,
+                scale: 1.1,
+                transition: {
+                  duration: 0.2
+                }
+              }}
+              whileTap={{
+                scale: 0.9
+              }}
+              onClick={() => { handleLanguages() }} className={`${languages == true ? "text-sm md:text-2xl lg:text-4xl text-blue-600 font-semibold" : "text-xs md:text-xl lg:text-3xl text-slate-600 font-light"} cursor-pointer`}>Programming Languages</motion.h1>
+            {languages && <motion.p
+              initial={{
+                opacity: 0,
+                y: -20
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: {
+                  duration: 0.3,
+                  type: 'spring',
+                  stiffness: 160
+                }
+              }}
+              className='mt-1 text-slate-800 text-xs md:text-base pr-4 md:pr-0'>Here are some Programming languages or skills known by me.</motion.p>}
           </div>
-          <span>80%</span>
-        </div>
-        <div className='flex px-2 space-x-2 md:space-x-4 items-center'>
-          <span className='w-20 text-center'>CSS</span>
-          <div className='h-4 md:h-5 border w-full rounded-xl md:w-[60vw] relative bg-blue-50'>
-            <div className='h-full bg-blue-500 w-[42vw] rounded-xl absolute'></div>
+          <div>
+            <motion.h1
+              whileHover={{
+                y: -3,
+                scale: 1.1,
+                transition: {
+                  duration: 0.2
+                }
+              }}
+              whileTap={{
+                scale: 0.9
+              }}
+              onClick={() => { handleCirtificates() }} className={`${cirtificates == true ? "text-xs md:text-2xl lg:text-4xl text-blue-600 font-semibold" : "text-sm md:text-xl lg:text-3xl text-slate-600 font-light"} cursor-pointer`}>My Cirtifications</motion.h1>
+            {cirtificates && <motion.p
+              initial={{
+                opacity: 0,
+                y: -20
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: {
+                  duration: 0.3,
+                  type: 'spring',
+                  stiffness: 160
+                }
+              }} className='mt-1 text-slate-800 text-xs md:text-base pl-4 md:pl-0'>Here are all of my skilled cirtificates.</motion.p>}
           </div>
-          <span>60%</span>
         </div>
-        <div className='flex px-2 space-x-2 md:space-x-4 items-center'>
-          <span className='w-20 text-center'>Java&nbsp;Script</span>
-          <div className='h-4 md:h-5 border w-full rounded-xl md:w-[60vw] relative bg-blue-50'>
-            <div className='h-full bg-blue-500 w-[36vw] rounded-xl absolute'></div>
+        {languages && <motion.div
+          initial={{
+            opacity: 0,
+            y: -20
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              delay: 0.3,
+              duration: 0.3,
+              type: 'spring',
+              stiffness: 160
+            }
+          }}
+          className='space-y-2 md:space-y-4 lg:space-y-6'>
+          <div className='flex px-2 space-x-2 md:space-x-4 items-center'>
+            <span className='w-20 text-center'>HTML</span>
+            <div className='h-4 md:h-5 border w-full rounded-xl md:w-[60vw] relative bg-blue-50'>
+              <div className='h-full bg-blue-500 w-[50vw] rounded-xl absolute'></div>
+            </div>
+            <span>80%</span>
           </div>
-          <span>60%</span>
-        </div>
-        <div className='flex px-2 space-x-2 md:space-x-4 items-center'>
-          <span className='w-20 text-center'>Python</span>
-          <div className='h-4 md:h-5 border w-full rounded-xl md:w-[60vw] relative bg-blue-50'>
-            <div className='h-full bg-blue-500 w-[36vw] rounded-xl absolute'></div>
+          <div className='flex px-2 space-x-2 md:space-x-4 items-center'>
+            <span className='w-20 text-center'>CSS</span>
+            <div className='h-4 md:h-5 border w-full rounded-xl md:w-[60vw] relative bg-blue-50'>
+              <div className='h-full bg-blue-500 w-[42vw] rounded-xl absolute'></div>
+            </div>
+            <span>60%</span>
+            <span onClick={handleCss} className='relative -mt-4 cursor-pointer'>
+              <AiOutlineDown className='border md:text-xl rounded-sm font-semibold text-blue-800 absolute bg-white' />
+              {css && <AiOutlineUp className='border md:text-xl rounded-sm font-semibold text-blue-800 absolute bg-white' />}
+            </span>
           </div>
-          <span>60%</span>
-        </div>
-        <div className='flex px-2 space-x-2 md:space-x-4 items-center'>
-          <span className='w-20 text-center'>Django</span>
-          <div className='h-4 md:h-5 border w-full rounded-xl md:w-[60vw] relative bg-blue-50'>
-            <div className='h-full bg-blue-500 w-[42vw] rounded-xl absolute'></div>
+          {css && <motion.div
+            initial={{
+              opacity: 0,
+              y: -50
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                duration: 0.6,
+                type: 'spring',
+                stiffness: 180
+              }
+            }}
+            className='space-y-4 ml-6 md:ml-24'>
+            <div className='flex px-2 space-x-2 md:space-x-4 items-center'>
+              <span className='w-20 text-center'>Bootstrap</span>
+              <div className='h-4 md:h-5 border w-full rounded-xl md:w-[50vw] relative bg-cyan-50'>
+                <div className='h-full bg-cyan-500 w-[40vw] rounded-xl absolute'></div>
+              </div>
+              <span>80%</span>
+            </div>
+            <div className='flex px-2 space-x-2 md:space-x-4 items-center'>
+              <span className='w-24 md:w-20 text-center'>Tailwind&nbsp;CSS</span>
+              <div className='h-4 md:h-5 border w-full rounded-xl md:w-[50vw] relative bg-cyan-50'>
+                <div className='h-full bg-cyan-500 w-[40vw] rounded-xl absolute'></div>
+              </div>
+              <span>80%</span>
+            </div>
+          </motion.div>}
+          <div className='flex px-2 space-x-2 md:space-x-4 items-center'>
+            <span className='w-20 text-center'>Java&nbsp;Script</span>
+            <div className='h-4 md:h-5 border w-full rounded-xl md:w-[60vw] relative bg-blue-50'>
+              <div className='h-full bg-blue-500 w-[36vw] rounded-xl absolute'></div>
+            </div>
+            <span>60%</span>
+            <span onClick={handleJavascript} className='-mt-4 cursor-pointer'>
+              <AiOutlineDown className='border md:text-xl rounded-sm font-semibold text-blue-800 absolute bg-white' />
+              {javascript && <AiOutlineUp className='border md:text-xl rounded-sm font-semibold text-blue-800 absolute bg-white' />}
+            </span>
           </div>
-          <span>70%</span>
-        </div>
-        <div className='flex px-2 space-x-2 md:space-x-4 items-center'>
-          <span className='w-20 text-center'>Next.js</span>
-          <div className='h-4 md:h-5 border w-full rounded-xl md:w-[60vw] relative bg-blue-50'>
-            <div className='h-full bg-blue-500 w-[42vw] rounded-xl absolute'></div>
+          {javascript && <motion.div
+            initial={{
+              opacity: 0,
+              y: -50
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                duration: 0.6,
+                type: 'spring',
+                stiffness: 180
+              }
+            }}
+            className='space-y-4 ml-6 md:ml-24'>
+            <div className='flex px-2 space-x-2 md:space-x-4 items-center'>
+              <span className='w-20 text-center'>React.js</span>
+              <div className='h-4 md:h-5 border w-full rounded-xl md:w-[50vw] relative bg-cyan-50'>
+                <div className='h-full bg-cyan-500 w-[15vw] rounded-xl absolute'></div>
+              </div>
+              <span>30%</span>
+            </div>
+            <div className='flex px-2 space-x-2 md:space-x-4 items-center'>
+              <span className='w-20 text-center'>Next.js</span>
+              <div className='h-4 md:h-5 border w-full rounded-xl md:w-[50vw] relative bg-cyan-50'>
+                <div className='h-full bg-cyan-500 w-[30vw] rounded-xl absolute'></div>
+              </div>
+              <span>60%</span>
+            </div>
+          </motion.div>}
+          <div className='flex px-2 space-x-2 md:space-x-4 items-center'>
+            <span className='w-20 text-center'>Python</span>
+            <div className='h-4 md:h-5 border w-full rounded-xl md:w-[60vw] relative bg-blue-50'>
+              <div className='h-full bg-blue-500 w-[36vw] rounded-xl absolute'></div>
+            </div>
+            <span>60%</span>
+            <span onClick={handlePython} className='-mt-4 cursor-pointer'>
+              <AiOutlineDown className='border md:text-xl rounded-sm font-semibold text-blue-800 absolute bg-white' />
+              {python && <AiOutlineUp className='border md:text-xl rounded-sm font-semibold text-blue-800 absolute bg-white' />}
+            </span>
           </div>
-          <span>70%</span>
-        </div>
+          {python && <motion.div
+            initial={{
+              opacity: 0,
+              y: -50
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                duration: 0.6,
+                type: 'spring',
+                stiffness: 180
+              }
+            }}
+            className='flex px-2 space-x-2 md:space-x-4 items-center ml-6 md:ml-24'>
+            <span className='w-20 text-center'>Django</span>
+            <div className='h-4 md:h-5 border w-full rounded-xl md:w-[50vw] relative bg-cyan-50'>
+              <div className='h-full bg-cyan-500 w-[35vw] rounded-xl absolute'></div>
+            </div>
+            <span>70%</span>
+          </motion.div>}
+          <div className='flex px-2 space-x-2 md:space-x-4 items-center'>
+            <span className='w-20 text-center'>C</span>
+            <div className='h-4 md:h-5 border w-full rounded-xl md:w-[60vw] relative bg-blue-50'>
+              <div className='h-full bg-blue-500 w-[42vw] rounded-xl absolute'></div>
+            </div>
+            <span>80%</span>
+          </div>
+          <div className='flex px-2 space-x-2 md:space-x-4 items-center'>
+            <span className='w-20 text-center'>C++</span>
+            <div className='h-4 md:h-5 border w-full rounded-xl md:w-[60vw] relative bg-blue-50'>
+              <div className='h-full bg-blue-500 w-[24vw] rounded-xl absolute'></div>
+            </div>
+            <span>40%</span>
+          </div>
+        </motion.div>}
+        {cirtificates && <motion.div
+          initial={{
+            opacity: 0,
+            y: -20
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              delay: 0.3,
+              duration: 0.3,
+              type: 'spring',
+              stiffness: 160
+            }
+          }} className="text-gray-600 body-font">
+          <div className="container px-5 pb-10 pt-14 mx-auto">
+            <div className="flex flex-wrap justify-evenly -m-4">
+              <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+                <a className="block relative h-48 rounded overflow-hidden">
+                  <img alt="ecommerce" className="object-cover object-center w-full h-full block" src="https://dummyimage.com/420x260" />
+                </a>
+                <div className="mt-4">
+                  <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                  <h2 className="text-gray-900 title-font text-lg font-medium">Course Name</h2>
+                  <p className="mt-1">2019</p>
+                </div>
+              </div>
+              <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+                <a className="block relative h-48 rounded overflow-hidden">
+                  <img alt="ecommerce" className="object-cover object-center w-full h-full block" src="https://dummyimage.com/421x261" />
+                </a>
+                <div className="mt-4">
+                  <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                  <h2 className="text-gray-900 title-font text-lg font-medium">Course Name</h2>
+                  <p className="mt-1">2019</p>
+                </div>
+              </div>
+              <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+                <a className="block relative h-48 rounded overflow-hidden">
+                  <img alt="ecommerce" className="object-cover object-center w-full h-full block" src="https://dummyimage.com/422x262" />
+                </a>
+                <div className="mt-4">
+                  <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                  <h2 className="text-gray-900 title-font text-lg font-medium">Course Name</h2>
+                  <p className="mt-1">2019</p>
+                </div>
+              </div>
+              <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+                <a className="block relative h-48 rounded overflow-hidden">
+                  <img alt="ecommerce" className="object-cover object-center w-full h-full block" src="https://dummyimage.com/423x263" />
+                </a>
+                <div className="mt-4">
+                  <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                  <h2 className="text-gray-900 title-font text-lg font-medium">Course Name</h2>
+                  <p className="mt-1">2019</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>}
       </section>
       {/* ------------------------projects----------------------- */}
       <section
@@ -274,10 +523,10 @@ export default function Home() {
                 }}
                 className='relative rounded-lg z-10 w-full min-h-full p-4 bg-gradient-to-t from-blue-500 to-[#ffffffdc]'>
                 <div className='flex flex-col justify-center items-center'>
-                  <h2 class="tracking-widest text-sm title-font font-medium text-green-600 mb-1">Django</h2>
-                  <h1 class="title-font text-xl font-semibold text-blue-700 mb-3">Authentication System</h1>
+                  <h2 className="tracking-widest text-sm title-font font-medium text-green-600 mb-1">Django</h2>
+                  <h1 className="title-font text-xl font-semibold text-blue-700 mb-3">Authentication System</h1>
                   <p className='text-xs text-green-600 -mt-3 mb-4 ml-auto'>~ Completed</p>
-                  <p class="leading-relaxed text-slate-800">This Authentication System fully make in Django which is a python Framework.</p>
+                  <p className="leading-relaxed text-slate-800">This Authentication System fully make in Django which is a python Framework.</p>
                 </div>
                 <div className='absolute bottom-2 right-3 flex'>
                   <p className='text-xs md:text-sm mx-2 text-white'>Click it to show the code on </p><AiFillGithub className='text-xl' /></div>
@@ -312,10 +561,10 @@ export default function Home() {
                 }}
                 className='relative rounded-lg z-10 w-full min-h-full p-4  bg-gradient-to-t from-blue-500 to-[#ffffffdc]'>
                 <div className='flex flex-col justify-center items-center'>
-                  <h2 class="tracking-widest text-sm title-font font-medium text-green-600 mb-1">Django</h2>
-                  <h1 class="title-font text-xl font-semibold text-blue-700 mb-3">Authentication System</h1>
+                  <h2 className="tracking-widest text-sm title-font font-medium text-green-600 mb-1">Django</h2>
+                  <h1 className="title-font text-xl font-semibold text-blue-700 mb-3">Authentication System</h1>
                   <p className='text-xs text-green-600 -mt-3 mb-4 ml-auto'>~ Completed</p>
-                  <p class="leading-relaxed text-slate-800">This Authentication System fully make in Django which is a python Framework.</p>
+                  <p className="leading-relaxed text-slate-800">This Authentication System fully make in Django which is a python Framework.</p>
                 </div>
                 <div className='absolute bottom-2 right-3 flex'>
                   <p className='text-xs md:text-sm mx-2 text-white'>Click it to show the code on </p><AiFillGithub className='text-xl' /></div>
@@ -350,10 +599,10 @@ export default function Home() {
                 }}
                 className='relative rounded-lg z-10 w-full min-h-full p-4  bg-gradient-to-t from-blue-500 to-[#ffffffdc]'>
                 <div className='flex flex-col justify-center items-center'>
-                  <h2 class="tracking-widest text-sm title-font font-medium text-green-600 mb-1">Django</h2>
-                  <h1 class="title-font text-xl font-semibold text-blue-700 mb-3">Authentication System</h1>
+                  <h2 className="tracking-widest text-sm title-font font-medium text-green-600 mb-1">Django</h2>
+                  <h1 className="title-font text-xl font-semibold text-blue-700 mb-3">Authentication System</h1>
                   <p className='text-xs text-green-600 -mt-3 mb-4 ml-auto'>~ Completed</p>
-                  <p class="leading-relaxed text-slate-800">This Authentication System fully make in Django which is a python Framework.</p>
+                  <p className="leading-relaxed text-slate-800">This Authentication System fully make in Django which is a python Framework.</p>
                 </div>
                 <div className='absolute bottom-2 right-3 flex'>
                   <p className='text-xs md:text-sm mx-2 text-white'>Click it to show the code on </p><AiFillGithub className='text-xl' /></div>
@@ -388,10 +637,10 @@ export default function Home() {
                 }}
                 className='relative rounded-lg z-10 w-full min-h-full p-4  bg-gradient-to-t from-blue-500 to-[#ffffffdc]'>
                 <div className='flex flex-col justify-center items-center'>
-                  <h2 class="tracking-widest text-sm title-font font-medium text-green-600 mb-1">Django</h2>
-                  <h1 class="title-font text-xl font-semibold text-blue-700 mb-3">Authentication System</h1>
+                  <h2 className="tracking-widest text-sm title-font font-medium text-green-600 mb-1">Django</h2>
+                  <h1 className="title-font text-xl font-semibold text-blue-700 mb-3">Authentication System</h1>
                   <p className='text-xs text-green-600 -mt-3 mb-4 ml-auto'>~ Completed</p>
-                  <p class="leading-relaxed text-slate-800">This Authentication System fully make in Django which is a python Framework.</p>
+                  <p className="leading-relaxed text-slate-800">This Authentication System fully make in Django which is a python Framework.</p>
                 </div>
                 <div className='absolute bottom-2 right-3 flex'>
                   <p className='text-xs md:text-sm mx-2 text-white'>Click it to show the code on </p><AiFillGithub className='text-xl' /></div>
