@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { AiFillGithub , AiOutlineInstagram , AiFillLinkedin , AiOutlineMail , AiFillTwitterCircle } from 'react-icons/ai';
+import { AiFillGithub, AiOutlineInstagram, AiFillLinkedin, AiOutlineMail, AiFillTwitterCircle } from 'react-icons/ai';
 import { FiPhoneCall } from 'react-icons/fi';
 
 
@@ -112,7 +112,7 @@ export default function Home() {
         <div className='lg:w-6/12 md:w-5/12'>
           <h2 className='md:text-lg lg:text-xl text-blue-600 font-semibold text-center md:text-start'>About me</h2>
           <p className='text-xs text-slate-700 px-6 md:px-2 text-center md:text-start'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam repellat aperiam facilis rem. Suscipit delectus voluptates repudiandae atque, corrupti recusandae velit aperiam voluptas qui in harum adipisci vero reiciendis non.</p>
-          <ul className='flex space-x-4 lg:space-x-6 my-2 border-b-2 pb-1'>
+          <ul className='flex space-x-3 md:space-x-6 mt-4 mb-2 border-b-2 pb-1'>
             <motion.li
               whileHover={{
                 y: -3,
@@ -156,7 +156,7 @@ export default function Home() {
             animate="visible"
           >
             <ul
-              className='list-disc space-y-4 pt-2 lg:mt-6'>
+              className='list-disc space-y-4 pt-2 lg:mt-3'>
               <motion.div
                 variants={innerAboutVariants}
                 className='flex items-center'>
@@ -175,7 +175,7 @@ export default function Home() {
             variants={aboutVariants}
             initial="hidden"
             animate="visible">
-            <ul className='list-disc space-y-4 pt-2 lg:mt-6'>
+            <ul className='list-disc space-y-4 pt-2 lg:mt-3'>
               <motion.li
                 variants={innerAboutVariants} className='text-blue-600'><strong> Fresher till now.</strong></motion.li>
             </ul>
@@ -184,7 +184,7 @@ export default function Home() {
             variants={aboutVariants}
             initial="hidden"
             animate="visible">
-            <ul className='list-disc space-y-4 pt-2 lg:mt-6'>
+            <ul className='list-disc space-y-4 pt-2 lg:mt-3'>
               <motion.li
                 variants={innerAboutVariants}
                 className='text-blue-600'><strong>Web Development</strong></motion.li>
@@ -195,6 +195,53 @@ export default function Home() {
           </motion.div>}
         </div>
       </motion.section>
+      {/* ------------------------languages----------------------- */}
+      <section id='languages' className='flex flex-col space-y-4 md:space-y-6 bg-white md:px-16 lg:px-28 py-8 md:py-10'>
+        <h1 className='text-xl md:text-2xl lg:text-4xl text-blue-600 font-semibold'>Programming Languages</h1>
+        <p>Here are some Programming languages or skills known by me.</p>
+        <div className='flex px-2 space-x-2 md:space-x-4 items-center'>
+          <span className='w-20 text-center'>HTML</span>
+          <div className='h-4 md:h-5 border w-full rounded-xl md:w-[60vw] relative bg-blue-50'>
+            <div className='h-full bg-blue-500 w-[50vw] rounded-xl absolute'></div>
+          </div>
+          <span>80%</span>
+        </div>
+        <div className='flex px-2 space-x-2 md:space-x-4 items-center'>
+          <span className='w-20 text-center'>CSS</span>
+          <div className='h-4 md:h-5 border w-full rounded-xl md:w-[60vw] relative bg-blue-50'>
+            <div className='h-full bg-blue-500 w-[42vw] rounded-xl absolute'></div>
+          </div>
+          <span>60%</span>
+        </div>
+        <div className='flex px-2 space-x-2 md:space-x-4 items-center'>
+          <span className='w-20 text-center'>Java&nbsp;Script</span>
+          <div className='h-4 md:h-5 border w-full rounded-xl md:w-[60vw] relative bg-blue-50'>
+            <div className='h-full bg-blue-500 w-[36vw] rounded-xl absolute'></div>
+          </div>
+          <span>60%</span>
+        </div>
+        <div className='flex px-2 space-x-2 md:space-x-4 items-center'>
+          <span className='w-20 text-center'>Python</span>
+          <div className='h-4 md:h-5 border w-full rounded-xl md:w-[60vw] relative bg-blue-50'>
+            <div className='h-full bg-blue-500 w-[36vw] rounded-xl absolute'></div>
+          </div>
+          <span>60%</span>
+        </div>
+        <div className='flex px-2 space-x-2 md:space-x-4 items-center'>
+          <span className='w-20 text-center'>Django</span>
+          <div className='h-4 md:h-5 border w-full rounded-xl md:w-[60vw] relative bg-blue-50'>
+            <div className='h-full bg-blue-500 w-[42vw] rounded-xl absolute'></div>
+          </div>
+          <span>70%</span>
+        </div>
+        <div className='flex px-2 space-x-2 md:space-x-4 items-center'>
+          <span className='w-20 text-center'>Next.js</span>
+          <div className='h-4 md:h-5 border w-full rounded-xl md:w-[60vw] relative bg-blue-50'>
+            <div className='h-full bg-blue-500 w-[42vw] rounded-xl absolute'></div>
+          </div>
+          <span>70%</span>
+        </div>
+      </section>
       {/* ------------------------projects----------------------- */}
       <section
         id='projects' className='bg-white md:px-12 lg:px-24 pb-16 pt-4 md:py-10 opacity-[2] relative'>
@@ -354,44 +401,52 @@ export default function Home() {
             </a>
           </motion.div>
           <motion.button
-          whileHover={{
-            scale: 1.05
-          }}
-          whileTap={{
-            scale: 0.9
-          }}
-          className='absolute lg:right-44 bottom-2 py-2 px-4 text-blue-600 border border-blue-600 rounded-md hover:text-white hover:bg-blue-600 hover:shadow-blue-300 hover:shadow-md'>View more</motion.button>
+            whileHover={{
+              scale: 1.05
+            }}
+            whileTap={{
+              scale: 0.9
+            }}
+            className='absolute lg:right-44 bottom-2 py-2 px-4 text-blue-600 border border-blue-600 rounded-md hover:text-white hover:bg-blue-600 hover:shadow-blue-300 hover:shadow-md'>View more</motion.button>
         </div>
       </section>
       {/* ------------------------contact----------------------- */}
       <section id='contact' className='bg-white flex py-14 relative flex-wrap'>
         <div className='w-full md:w-1/2 flex flex-col justify-center items-center md:items-start md:pl-44 space-y-5'>
           <h2 className='text-4xl'>Contact me</h2>
-          <div className='flex items-center cursor-pointer'><FiPhoneCall className='text-green-600 text-xl'/><p className='ml-2'> +91-6290653563</p></div>
-          <div className='flex items-center cursor-pointer'><AiOutlineMail className='text-orange-600 text-xl'/><p className='ml-2'> rs7289579@gmail.com</p></div>
+          <div className='flex items-center cursor-pointer'><FiPhoneCall className='text-green-600 text-xl' /><p className='ml-2'> +91-6290653563</p></div>
+          <div className='flex items-center cursor-pointer'><AiOutlineMail className='text-orange-600 text-xl' /><p className='ml-2'> rs7289579@gmail.com</p></div>
           <div className='flex space-x-4'>
-          <AiOutlineInstagram className='text-3xl text-red-600 cursor-pointer'/>
-          <AiFillLinkedin className='text-3xl text-blue-600 cursor-pointer'/>
-          <AiFillTwitterCircle className='text-3xl text-cyan-400 cursor-pointer'/>
-          <AiFillGithub className='text-3xl cursor-pointer'/>
+            <AiOutlineInstagram className='text-3xl text-red-600 cursor-pointer' />
+            <AiFillLinkedin className='text-3xl text-blue-600 cursor-pointer' />
+            <AiFillTwitterCircle className='text-3xl text-cyan-400 cursor-pointer' />
+            <AiFillGithub className='text-3xl cursor-pointer' />
           </div>
+          <motion.a
+            whileHover={{
+              scale: 1.05
+            }}
+            whileTap={{
+              scale: 0.9
+            }}
+            href="img1.png" download className='py-2 px-4 text-blue-600 border border-blue-600 rounded-md hover:text-white hover:bg-blue-600 hover:shadow-blue-300 hover:shadow-md'>Download CV</motion.a>
         </div>
         <div className='w-full md:w-1/2 flex flex-col space-y-4 px-12 mt-10 md:mt-0'>
-          <input className='p-2 border rounded-md focus:shadow-blue-300 focus:shadow-lg focus:outline-none' type="text" name="name" placeholder='Enter Your Name'/>
-          <input className='p-2 border rounded-md focus:shadow-blue-300 focus:shadow-lg focus:outline-none' type="email" name="email" placeholder='Enter Your Email Id'/>
+          <input className='p-2 border rounded-md focus:shadow-blue-300 focus:shadow-lg focus:outline-none' type="text" name="name" placeholder='Enter Your Name' />
+          <input className='p-2 border rounded-md focus:shadow-blue-300 focus:shadow-lg focus:outline-none' type="email" name="email" placeholder='Enter Your Email Id' />
           <textarea className='p-2 border rounded-md focus:shadow-blue-300 focus:shadow-lg focus:outline-none' name="address" id="address" cols="30" rows="6" placeholder='Enter your Address'></textarea>
           <motion.button
-          whileHover={{
-            scale: 1.05
-          }}
-          whileTap={{
-            scale: 0.9
-          }}
-          className='absolute right-12 bottom-2 py-2 px-4 text-blue-600 border border-blue-600 rounded-md hover:text-white hover:bg-blue-600 hover:shadow-blue-300 hover:shadow-md'>Submit</motion.button>
+            whileHover={{
+              scale: 1.05
+            }}
+            whileTap={{
+              scale: 0.9
+            }}
+            className='absolute right-12 bottom-2 py-2 px-4 text-blue-600 border border-blue-600 rounded-md hover:text-white hover:bg-blue-600 hover:shadow-blue-300 hover:shadow-md'>Submit</motion.button>
         </div>
       </section>
       {/* ------------------------footer----------------------- */}
-      <Footer/>
+      <Footer />
     </>
   )
 }
