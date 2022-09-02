@@ -128,8 +128,8 @@ export default function Home() {
           }
         }}
         id="about" className='bg-white flex justify-center md:justify-around flex-wrap px-6 pt-8'>
-        <div className='w-52 h-52 md:w-64 md:h-64 bg-orange-400 rounded-lg'>
-
+        <div className='w-52 bg-cyan-50 border border-cyan-100 shadow-xl shadow-cyan-50 h-52 md:w-64 md:h-64 rounded-lg overflow-hidden'>
+        <img className='w-64 -mr-8' src="./pic.png" alt="My Pic" />
         </div>
         <div className='lg:w-6/12 md:w-5/12'>
           <h2 className='md:text-lg lg:text-xl text-blue-600 font-semibold text-center md:text-start'>About me</h2>
@@ -539,8 +539,6 @@ export default function Home() {
                 <div className='absolute bottom-2 right-3 flex'>
                   <p className='text-xs md:text-sm mx-2 text-white'>Click it to show the code on </p><AiFillGithub className='text-xl' /></div>
               </motion.div>
-              <div className='absolute bottom-1 right-2 flex lg:hidden'>
-                <p className='text-xs md:text-sm mx-2 text-black'>Click it to show the code on </p><AiFillGithub className='text-xl' /></div>
           </motion.div>
           <motion.div
             whileHover={{
@@ -615,8 +613,6 @@ export default function Home() {
                 <div className='absolute bottom-2 right-3 flex'>
                   <p className='text-xs md:text-sm mx-2 text-white'>Click it to show the code on </p><AiFillGithub className='text-xl' /></div>
               </motion.div>
-              <div className='absolute bottom-1 right-2 flex lg:hidden'>
-                <p className='text-xs md:text-sm mx-2 text-black'>Click it to show the code on </p><AiFillGithub className='text-xl' /></div>
           </motion.div>
           <motion.div
             whileHover={{
@@ -653,8 +649,6 @@ export default function Home() {
                 <div className='absolute bottom-2 right-3 flex'>
                   <p className='text-xs md:text-sm mx-2 text-white'>Click it to show the code on </p><AiFillGithub className='text-xl' /></div>
               </motion.div>
-              <div className='absolute bottom-1 right-2 flex lg:hidden'>
-                <p className='text-xs md:text-sm mx-2 text-black'>Click it to show the code on </p><AiFillGithub className='text-xl' /></div>
           </motion.div>
           <motion.button
             whileHover={{
@@ -673,10 +667,10 @@ export default function Home() {
           <div className='flex items-center cursor-pointer'><FiPhoneCall className='text-green-600 text-xl' /><p className='ml-2'> +91-6290653563</p></div>
           <div className='flex items-center cursor-pointer'><AiOutlineMail className='text-orange-600 text-xl' /><p className='ml-2'> rs7289579@gmail.com</p></div>
           <div className='flex space-x-4'>
-            <AiOutlineInstagram className='text-3xl text-red-600 cursor-pointer' />
-            <AiFillLinkedin className='text-3xl text-blue-600 cursor-pointer' />
-            <AiFillTwitterCircle className='text-3xl text-cyan-400 cursor-pointer' />
-            <AiFillGithub className='text-3xl cursor-pointer' />
+            <a target="_blank" href="https://www.instagram.com/mr___skywalker/"><AiOutlineInstagram className='text-3xl text-red-600 cursor-pointer' /></a>
+            <a target="_blank" href="https://www.linkedin.com/in/rohan-singh-5b84a9223/"><AiFillLinkedin className='text-3xl text-blue-600 cursor-pointer' /></a>
+            <a target="_blank" href="https://twitter.com/RohanSingh_CSE"><AiFillTwitterCircle className='text-3xl text-cyan-400 cursor-pointer' /></a>
+            <a target="_blank" href="https://github.com/RohanSingh182003"><AiFillGithub className='text-3xl cursor-pointer' /></a>
           </div>
           <motion.a
             whileHover={{
@@ -687,10 +681,10 @@ export default function Home() {
             }}
             href="img1.png" download className='py-2 px-4 text-blue-600 border border-blue-600 rounded-md hover:text-white hover:bg-blue-600 hover:shadow-blue-300 hover:shadow-md'>Download CV</motion.a>
         </div>
-        <div className='w-full md:w-1/2 flex flex-col space-y-4 px-12 mt-10 md:mt-0'>
-          <input className='p-2 border rounded-md focus:shadow-blue-300 focus:shadow-lg focus:outline-none' type="text" name="name" placeholder='Enter Your Name' />
-          <input className='p-2 border rounded-md focus:shadow-blue-300 focus:shadow-lg focus:outline-none' type="email" name="email" placeholder='Enter Your Email Id' />
-          <textarea className='p-2 border rounded-md focus:shadow-blue-300 focus:shadow-lg focus:outline-none' name="address" id="address" cols="30" rows="6" placeholder='Enter Message'></textarea>
+        <form method='POST' action='https://formspree.io/f/mqkjekak' className='w-full md:w-1/2 flex flex-col space-y-4 px-12 mt-10 md:mt-0'>
+          <input required className='p-2 border rounded-md focus:shadow-blue-300 focus:shadow-lg focus:outline-none' type="text" name="name" placeholder='Enter Your Name' />
+          <input required className='p-2 border rounded-md focus:shadow-blue-300 focus:shadow-lg focus:outline-none' type="email" name="email" placeholder='Enter Your Email Id' />
+          <textarea required className='p-2 border rounded-md focus:shadow-blue-300 focus:shadow-lg focus:outline-none' name="message" id="message" cols="30" rows="6" placeholder='Enter Message'></textarea>
           <motion.button
             whileHover={{
               scale: 1.05
@@ -699,7 +693,7 @@ export default function Home() {
               scale: 0.9
             }}
             className='absolute right-12 bottom-2 py-2 px-4 text-blue-600 border border-blue-600 rounded-md hover:text-white hover:bg-blue-600 hover:shadow-blue-300 hover:shadow-md'>Submit</motion.button>
-        </div>
+        </form>
       </section>
       {/* ------------------------footer----------------------- */}
       <Footer />
