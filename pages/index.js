@@ -10,7 +10,7 @@ import { FiPhoneCall } from 'react-icons/fi';
 
 export default function Home() {
   const [education, setEducation] = useState( true )
-  const [experience, setExperience] = useState( false )
+  const [achivements, setAchivements] = useState( false )
   const [skills, setSkills] = useState( false )
   const [css, setCss] = useState( false )
   const [javascript, setJavascript] = useState( false )
@@ -20,17 +20,17 @@ export default function Home() {
 
   const handleEducation = () => {
     setEducation( true )
-    setExperience( false )
+    setAchivements( false )
     setSkills( false )
   }
-  const handleExperience = () => {
+  const handleachivements = () => {
     setEducation( false )
-    setExperience( true )
+    setAchivements( true )
     setSkills( false )
   }
   const handleSkills = () => {
     setEducation( false )
-    setExperience( false )
+    setAchivements( false )
     setSkills( true )
   }
   const handleCss = () => {
@@ -106,7 +106,7 @@ export default function Home() {
               <h2 className='text-md md:text-lg lg:text-2xl text-center mt-2 flex absolute left-6 lg:left-14 w-52 md:w-72'><span className='text-lg md:text-2xl lg:text-3xl'> I </span><span className='text-red-700 text-sm md:text-xl mt-1'>&nbsp; ❤ &nbsp;</span>&nbsp;<span className='text-blue-600 text-lg md:text-xl lg:text-2xl'>
                 <Typewriter
                   options={{
-                    strings: ['Web Designing', 'Web Development'],
+                    strings: ['JavaScript', 'Python'],
                     autoStart: true,
                     loop: true,
                   }} />
@@ -133,7 +133,7 @@ export default function Home() {
         </div>
         <div className='lg:w-6/12 md:w-5/12'>
           <h2 className='md:text-lg lg:text-xl text-blue-600 font-semibold text-center md:text-start'>About me</h2>
-          <p className='text-xs text-slate-700 px-6 md:px-2 text-center md:text-start'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam repellat aperiam facilis rem. Suscipit delectus voluptates repudiandae atque, corrupti recusandae velit aperiam voluptas qui in harum adipisci vero reiciendis non.</p>
+          <p className='text-xs text-slate-700 px-6 md:px-2 text-center md:text-start'>I am Rohan Singh , from Kolkata , West Bengal. Codeing is my hobby. My fevourite programming language is JavaScript.</p>
           <ul className='flex space-x-3 md:space-x-6 mt-4 mb-2 border-b-2 pb-1'>
             <motion.li
               whileHover={{
@@ -158,7 +158,7 @@ export default function Home() {
               whileTap={{
                 scale: 0.9
               }}
-              onClick={() => { handleExperience() }} className={`cursor-pointer ${experience && 'underline-offset-4 underline text-blue-600'}`}>Experience</motion.li>
+              onClick={() => { handleachivements() }} className={`cursor-pointer ${achivements && 'underline-offset-4 underline text-blue-600'}`}>Achivements</motion.li>
             <motion.li
               whileHover={{
                 y: -3,
@@ -193,13 +193,13 @@ export default function Home() {
                 <li className='text-blue-600'><strong>Graduation</strong>&nbsp;:</li><span className='ml-2 text-xs md:text-sm text-slate-900'>Persuing Batchelor Of Technology(2021-25) from Swami Vivekananda University</span></motion.div>
             </ul>
           </motion.div>}
-          {experience && <motion.div
+          {achivements && <motion.div
             variants={aboutVariants}
             initial="hidden"
             animate="visible">
             <ul className='list-disc space-y-4 pt-2 lg:mt-3'>
               <motion.li
-                variants={innerAboutVariants} className='text-blue-600'><strong> Fresher till now.</strong></motion.li>
+                variants={innerAboutVariants} className='text-blue-600'><strong> Finalist of Smart India Hackathon 2022.</strong></motion.li>
             </ul>
           </motion.div>}
           {skills && <motion.div
@@ -304,7 +304,7 @@ export default function Home() {
           <div className='flex px-2 space-x-2 md:space-x-4 items-center'>
             <span className='w-20 text-center'>CSS</span>
             <div className='h-4 md:h-5 border w-full rounded-xl md:w-[60vw] relative bg-blue-50'>
-              <div className='h-full bg-blue-500 w-[42vw] rounded-xl absolute'></div>
+              <div className='h-full bg-blue-500 w-[36vw] rounded-xl absolute'></div>
             </div>
             <span>60%</span>
             <span onClick={handleCss} className='relative -mt-4 cursor-pointer'>
@@ -371,9 +371,9 @@ export default function Home() {
             <div className='flex px-2 space-x-2 md:space-x-4 items-center'>
               <span className='w-20 text-center'>React.js</span>
               <div className='h-4 md:h-5 border w-full rounded-xl md:w-[50vw] relative bg-cyan-50'>
-                <div className='h-full bg-cyan-500 w-[15vw] rounded-xl absolute'></div>
+                <div className='h-full bg-cyan-500 w-[25vw] rounded-xl absolute'></div>
               </div>
-              <span>30%</span>
+              <span>50%</span>
             </div>
             <div className='flex px-2 space-x-2 md:space-x-4 items-center'>
               <span className='w-20 text-center'>Next.js</span>
@@ -381,6 +381,13 @@ export default function Home() {
                 <div className='h-full bg-cyan-500 w-[30vw] rounded-xl absolute'></div>
               </div>
               <span>60%</span>
+            </div>
+            <div className='flex px-2 space-x-2 md:space-x-4 items-center'>
+              <span className='w-20 text-center'>React&nbsp;Native</span>
+              <div className='h-4 md:h-5 border w-full rounded-xl md:w-[50vw] relative bg-cyan-50'>
+                <div className='h-full bg-cyan-500 w-[20vw] rounded-xl absolute'></div>
+              </div>
+              <span>40%</span>
             </div>
           </motion.div>}
           <div className='flex px-2 space-x-2 md:space-x-4 items-center'>
@@ -418,7 +425,7 @@ export default function Home() {
           <div className='flex px-2 space-x-2 md:space-x-4 items-center'>
             <span className='w-20 text-center'>C</span>
             <div className='h-4 md:h-5 border w-full rounded-xl md:w-[60vw] relative bg-blue-50'>
-              <div className='h-full bg-blue-500 w-[42vw] rounded-xl absolute'></div>
+              <div className='h-full bg-blue-500 w-[48vw] rounded-xl absolute'></div>
             </div>
             <span>80%</span>
           </div>
@@ -448,43 +455,43 @@ export default function Home() {
           <div className="container px-5 pb-10 pt-14 mx-auto">
             <div className="flex flex-wrap justify-evenly -m-4">
               <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-                <a className="block relative h-48 rounded overflow-hidden">
-                  <img alt="ecommerce" className="object-cover object-center w-full h-full block" src="https://dummyimage.com/420x260" />
+                <a href="cir1.png" target="_blank" className="block relative h-48 rounded overflow-hidden">
+                  <img alt="ecommerce" className="object-cover object-center w-full h-full block" src="cir1.png" />
                 </a>
                 <div className="mt-4">
-                  <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                  <h2 className="text-gray-900 title-font text-lg font-medium">Course Name</h2>
-                  <p className="mt-1">2019</p>
+                  <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">Python</h3>
+                  <h2 className="text-gray-900 title-font text-lg font-medium">Data Manipulation in Python</h2>
+                  <p className="mt-1">29/01/2022</p>
                 </div>
               </div>
               <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-                <a className="block relative h-48 rounded overflow-hidden">
-                  <img alt="ecommerce" className="object-cover object-center w-full h-full block" src="https://dummyimage.com/421x261" />
+                <a href="cir2.png" target="_blank" className="block relative h-48 rounded overflow-hidden">
+                  <img alt="ecommerce" className="object-cover object-center w-full h-full block" src="cir2.png" />
                 </a>
                 <div className="mt-4">
-                  <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                  <h2 className="text-gray-900 title-font text-lg font-medium">Course Name</h2>
-                  <p className="mt-1">2019</p>
+                  <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">R</h3>
+                  <h2 className="text-gray-900 title-font text-lg font-medium">Data Science with R programming</h2>
+                  <p className="mt-1">19/11/2021</p>
                 </div>
               </div>
               <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-                <a className="block relative h-48 rounded overflow-hidden">
-                  <img alt="ecommerce" className="object-cover object-center w-full h-full block" src="https://dummyimage.com/422x262" />
+                <a href="cir3.png" target="_blank" className="block relative h-48 rounded overflow-hidden">
+                  <img alt="ecommerce" className="object-cover object-center w-full h-full block" src="cir3.png" />
                 </a>
                 <div className="mt-4">
-                  <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                  <h2 className="text-gray-900 title-font text-lg font-medium">Course Name</h2>
-                  <p className="mt-1">2019</p>
+                  <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">Web Development</h3>
+                  <h2 className="text-gray-900 title-font text-lg font-medium">Full stact web development program</h2>
+                  <p className="mt-1">15/09/2021</p>
                 </div>
               </div>
               <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-                <a className="block relative h-48 rounded overflow-hidden">
-                  <img alt="ecommerce" className="object-cover object-center w-full h-full block" src="https://dummyimage.com/423x263" />
+                <a href="cir4.png" target="_blank" className="block relative h-48 rounded overflow-hidden">
+                  <img alt="ecommerce" className="object-cover object-center w-full h-full block" src="cir4.png" />
                 </a>
                 <div className="mt-4">
-                  <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                  <h2 className="text-gray-900 title-font text-lg font-medium">Course Name</h2>
-                  <p className="mt-1">2019</p>
+                  <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">Django</h3>
+                  <h2 className="text-gray-900 title-font text-lg font-medium">Django in Hindi</h2>
+                  <p className="mt-1">03/2022</p>
                 </div>
               </div>
             </div>
@@ -507,10 +514,9 @@ export default function Home() {
             whileTap={{
               scale: 0.9
             }}
-            className='w-64 h-64 rounded-lg relative mt-4 md:mt-2 lg:mt-0 hover:shadow-2xl hover:border-2'>
-            <a href="#">
+            className='w-64 h-64 rounded-lg relative mt-4 md:mt-2 lg:mt-0 hover:shadow-2xl hover:border-2 border'>
               <img
-                className='absolute rounded-lg inset-0 w-full h-full object-cover object-center hover:opacity-50' src="https://s3.amazonaws.com/gdb-blog/images/graphenedb-security.png" />
+                className='absolute rounded-lg inset-0 w-full h-full object-cover object-center hover:opacity-50' src="./auth.png" />
               <motion.div
                 initial={{
                   opacity: 0,
@@ -522,18 +528,19 @@ export default function Home() {
                   }
                 }}
                 className='relative rounded-lg z-10 w-full min-h-full p-4 bg-gradient-to-t from-blue-500 to-[#ffffffdc]'>
+                <a target="_blank" href="https://github.com/RohanSingh182003/Auithentication_System">
                 <div className='flex flex-col justify-center items-center'>
                   <h2 className="tracking-widest text-sm title-font font-medium text-green-600 mb-1">Django</h2>
                   <h1 className="title-font text-xl font-semibold text-blue-700 mb-3">Authentication System</h1>
                   <p className='text-xs text-green-600 -mt-3 mb-4 ml-auto'>~ Completed</p>
                   <p className="leading-relaxed text-slate-800">This Authentication System fully make in Django which is a python Framework.</p>
                 </div>
+                </a>
                 <div className='absolute bottom-2 right-3 flex'>
                   <p className='text-xs md:text-sm mx-2 text-white'>Click it to show the code on </p><AiFillGithub className='text-xl' /></div>
               </motion.div>
               <div className='absolute bottom-1 right-2 flex lg:hidden'>
                 <p className='text-xs md:text-sm mx-2 text-black'>Click it to show the code on </p><AiFillGithub className='text-xl' /></div>
-            </a>
           </motion.div>
           <motion.div
             whileHover={{
@@ -545,10 +552,9 @@ export default function Home() {
             whileTap={{
               scale: 0.9
             }}
-            className='w-64 h-64 rounded-lg relative mt-4 md:mt-2 lg:mt-0 hover:shadow-2xl hover:border-2'>
-            <a href="#">
+            className='w-64 h-64 rounded-lg relative mt-4 md:mt-2 lg:mt-0 hover:shadow-2xl hover:border-2 border'>
               <img
-                className='absolute rounded-lg inset-0 w-full h-full object-cover object-center' src="https://s3.amazonaws.com/gdb-blog/images/graphenedb-security.png" />
+                className='absolute rounded-lg inset-0 w-full h-full object-cover object-center' src="./Ecommerce.png" />
               <motion.div
                 initial={{
                   opacity: 0,
@@ -560,18 +566,19 @@ export default function Home() {
                   }
                 }}
                 className='relative rounded-lg z-10 w-full min-h-full p-4  bg-gradient-to-t from-blue-500 to-[#ffffffdc]'>
+                <a target="_blank" href="https://github.com/RohanSingh182003/My-Ecommerce-Store">
                 <div className='flex flex-col justify-center items-center'>
-                  <h2 className="tracking-widest text-sm title-font font-medium text-green-600 mb-1">Django</h2>
-                  <h1 className="title-font text-xl font-semibold text-blue-700 mb-3">Authentication System</h1>
-                  <p className='text-xs text-green-600 -mt-3 mb-4 ml-auto'>~ Completed</p>
-                  <p className="leading-relaxed text-slate-800">This Authentication System fully make in Django which is a python Framework.</p>
+                  <h2 className="tracking-widest text-sm title-font font-medium text-green-600 mb-1">Next.js</h2>
+                  <h1 className="title-font text-xl font-semibold text-blue-700 mb-3">Ecommerce Website</h1>
+                  <p className='text-xs text-yellow-600 -mt-3 mb-4 ml-auto'>~ Under Process</p>
+                  <p className="leading-relaxed text-slate-800">This Ecommerce website is fully made with JavaScript and its frameworks.</p>
                 </div>
+                </a>
                 <div className='absolute bottom-2 right-3 flex'>
                   <p className='text-xs md:text-sm mx-2 text-white'>Click it to show the code on </p><AiFillGithub className='text-xl' /></div>
               </motion.div>
               <div className='absolute bottom-1 right-2 flex lg:hidden'>
                 <p className='text-xs md:text-sm mx-2 text-black'>Click it to show the code on </p><AiFillGithub className='text-xl' /></div>
-            </a>
           </motion.div>
           <motion.div
             whileHover={{
@@ -583,10 +590,9 @@ export default function Home() {
             whileTap={{
               scale: 0.9
             }}
-            className='w-64 h-64 rounded-lg relative mt-4 md:mt-2 lg:mt-0 hover:shadow-2xl hover:border-2'>
-            <a href="#">
+            className='w-64 h-64 rounded-lg relative mt-4 md:mt-2 lg:mt-0 hover:shadow-2xl hover:border-2 border'>
               <img
-                className='absolute rounded-lg inset-0 w-full h-full object-cover object-center' src="https://s3.amazonaws.com/gdb-blog/images/graphenedb-security.png" />
+                className='absolute rounded-lg inset-0 w-full h-full object-cover object-center' src="./todoApp.png" />
               <motion.div
                 initial={{
                   opacity: 0,
@@ -598,18 +604,19 @@ export default function Home() {
                   }
                 }}
                 className='relative rounded-lg z-10 w-full min-h-full p-4  bg-gradient-to-t from-blue-500 to-[#ffffffdc]'>
+                                 <a target="_blank" href="https://github.com/RohanSingh182003/ToDo-App">
                 <div className='flex flex-col justify-center items-center'>
-                  <h2 className="tracking-widest text-sm title-font font-medium text-green-600 mb-1">Django</h2>
-                  <h1 className="title-font text-xl font-semibold text-blue-700 mb-3">Authentication System</h1>
+                  <h2 className="tracking-widest text-sm title-font font-medium text-green-600 mb-1">React Native</h2>
+                  <h1 className="title-font text-xl font-semibold text-blue-700 mb-3">Todo App</h1>
                   <p className='text-xs text-green-600 -mt-3 mb-4 ml-auto'>~ Completed</p>
-                  <p className="leading-relaxed text-slate-800">This Authentication System fully make in Django which is a python Framework.</p>
+                  <p className="leading-relaxed text-slate-800">This Todo app is a cross platform mobile application, madw with React Native.</p>
                 </div>
+                </a>
                 <div className='absolute bottom-2 right-3 flex'>
                   <p className='text-xs md:text-sm mx-2 text-white'>Click it to show the code on </p><AiFillGithub className='text-xl' /></div>
               </motion.div>
               <div className='absolute bottom-1 right-2 flex lg:hidden'>
                 <p className='text-xs md:text-sm mx-2 text-black'>Click it to show the code on </p><AiFillGithub className='text-xl' /></div>
-            </a>
           </motion.div>
           <motion.div
             whileHover={{
@@ -621,10 +628,9 @@ export default function Home() {
             whileTap={{
               scale: 0.9
             }}
-            className='hidden md:block lg:hidden w-64 h-64 rounded-lg relative mt-4 md:mt-2 lg:mt-0 hover:shadow-2xl hover:border-2'>
-            <a href="#">
+            className='hidden md:block lg:hidden w-64 h-64 rounded-lg relative mt-4 md:mt-2 lg:mt-0 hover:shadow-2xl hover:border-2 border'>
               <img
-                className='absolute rounded-lg inset-0 w-full h-full object-cover object-center' src="https://s3.amazonaws.com/gdb-blog/images/graphenedb-security.png" />
+                className='absolute rounded-lg inset-0 w-full h-full object-cover object-center' src="./crud.png" />
               <motion.div
                 initial={{
                   opacity: 0,
@@ -636,18 +642,19 @@ export default function Home() {
                   }
                 }}
                 className='relative rounded-lg z-10 w-full min-h-full p-4  bg-gradient-to-t from-blue-500 to-[#ffffffdc]'>
+                  <a target="_blank" href="https://github.com/RohanSingh182003/CRUD-Using-Django">
                 <div className='flex flex-col justify-center items-center'>
                   <h2 className="tracking-widest text-sm title-font font-medium text-green-600 mb-1">Django</h2>
-                  <h1 className="title-font text-xl font-semibold text-blue-700 mb-3">Authentication System</h1>
+                  <h1 className="title-font text-xl font-semibold text-blue-700 mb-3">CRUD App</h1>
                   <p className='text-xs text-green-600 -mt-3 mb-4 ml-auto'>~ Completed</p>
-                  <p className="leading-relaxed text-slate-800">This Authentication System fully make in Django which is a python Framework.</p>
+                  <p className="leading-relaxed text-slate-800">This Crud app is made in Django to proform basic crud operations.</p>
                 </div>
+                </a>
                 <div className='absolute bottom-2 right-3 flex'>
                   <p className='text-xs md:text-sm mx-2 text-white'>Click it to show the code on </p><AiFillGithub className='text-xl' /></div>
               </motion.div>
               <div className='absolute bottom-1 right-2 flex lg:hidden'>
                 <p className='text-xs md:text-sm mx-2 text-black'>Click it to show the code on </p><AiFillGithub className='text-xl' /></div>
-            </a>
           </motion.div>
           <motion.button
             whileHover={{
@@ -656,7 +663,7 @@ export default function Home() {
             whileTap={{
               scale: 0.9
             }}
-            className='absolute lg:right-44 bottom-2 py-2 px-4 text-blue-600 border border-blue-600 rounded-md hover:text-white hover:bg-blue-600 hover:shadow-blue-300 hover:shadow-md'>View more</motion.button>
+            className='absolute lg:right-44 bottom-2 py-2 px-4 text-blue-600 border border-blue-600 rounded-md hover:text-white hover:bg-blue-600 hover:shadow-blue-300 hover:shadow-md'><a target="_blank" href="https://github.com/RohanSingh182003"> View more</a></motion.button>
         </div>
       </section>
       {/* ------------------------contact----------------------- */}
@@ -683,7 +690,7 @@ export default function Home() {
         <div className='w-full md:w-1/2 flex flex-col space-y-4 px-12 mt-10 md:mt-0'>
           <input className='p-2 border rounded-md focus:shadow-blue-300 focus:shadow-lg focus:outline-none' type="text" name="name" placeholder='Enter Your Name' />
           <input className='p-2 border rounded-md focus:shadow-blue-300 focus:shadow-lg focus:outline-none' type="email" name="email" placeholder='Enter Your Email Id' />
-          <textarea className='p-2 border rounded-md focus:shadow-blue-300 focus:shadow-lg focus:outline-none' name="address" id="address" cols="30" rows="6" placeholder='Enter your Address'></textarea>
+          <textarea className='p-2 border rounded-md focus:shadow-blue-300 focus:shadow-lg focus:outline-none' name="address" id="address" cols="30" rows="6" placeholder='Enter Message'></textarea>
           <motion.button
             whileHover={{
               scale: 1.05
